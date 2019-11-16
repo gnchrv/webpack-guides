@@ -1,4 +1,6 @@
 .hello {
   color: green;
   font-size: 2em;
+  background: url('./webpack-logo.svg');
+  background-size: contain;
 }
