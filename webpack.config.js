@@ -16,6 +16,18 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|svg)$/,
         use: ['file-loader']
+      },
+      {
+        test: /\.(csv|tsv)$/,
+        loader: 'csv-loader',
+        options: {
+          dynamicTyping: true,
+          skipEmptyLines: true
+        }
+      },
+      {
+        test: /\.xml$/,
+        use: ['xml-loader']
       }
     ]
   }
