@@ -1,20 +1,10 @@
-import _ from 'lodash'
-import printMe from './print'
-
-function component() {
-  // Create a div element
+async function getComponent() {
   const el = document.createElement('div')
-  const btn = document.createElement('button')
 
-  // Add styling and some text
-  el.innerHTML = ['Hello', 'webpack'].join(' ')
-  btn.innerHTML = 'Click me and check the console!'
-  btn.onclick = printMe
+  const { default: _ } = await import(/* webpackChunkName: 'lodash' */ 'lodash')
+  el.innerHTML = _.join(['Hello', 'webpack'], ' ')
 
-  el.appendChild(btn)
-
-  // Return the element
   return el
 }
 
-document.body.appendChild(component())
+getComponent().then(component => { document.body.appendChild(component) })
