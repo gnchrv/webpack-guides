@@ -11,7 +11,7 @@ module.exports = {
   },
   entry: {
     app: './src/index.js',
-    print: './src/print.js'
+    another: './src/another-module.js'
   },
   output: {
     filename: '[name].bundle.js',
